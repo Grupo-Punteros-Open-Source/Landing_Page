@@ -1,0 +1,78 @@
+.plans-container {
+    margin-top: 1.6%;
+}
+
+.custom-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.custom-card {
+    width: 300px; /* Ancho original */
+    height: 400px; /* Altura original */
+    background-color: #B2C3D3;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px; /* Padding ajustado para más espacio vertical */
+    text-align: center;
+    margin: 20px;
+    position: relative; /* Para posicionar el botón de forma absoluta dentro de la tarjeta */
+}
+
+.custom-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.custom-price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.custom-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.custom-features li {
+    margin-bottom: 20px;
+}
+
+.custom-cta-button {
+    position: absolute; /* Posicionamiento absoluto para el botón */
+    bottom: 10px; /* Distancia desde la parte inferior de la tarjeta */
+    left: 50%; /* Alineación horizontal al centro */
+    transform: translateX(-50%); /* Alineación horizontal al centro */
+    width: calc(100% - 40px); /* Ancho del botón */
+    display: block;
+    padding: 10px 0;
+    background-color: #406378;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-cta-button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 800px) {
+    .custom-card {
+        width: calc(100% - 40px);
+        margin: 20px;
+        width: 200px;
+    }
+
+    .plans-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
