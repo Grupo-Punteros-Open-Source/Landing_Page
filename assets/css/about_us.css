@@ -1,3 +1,6 @@
+body{
+    overflow: initial;
+}
 
 .body__aboutus nav {
     position: relative;

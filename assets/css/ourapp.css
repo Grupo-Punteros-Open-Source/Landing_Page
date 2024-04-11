@@ -30,6 +30,7 @@
 .img-phone {
     justify-content: left;
     background-image: url(/assets/img/app_devices.png);
+    background-size: cover;
     background-position: center;
 }
 
