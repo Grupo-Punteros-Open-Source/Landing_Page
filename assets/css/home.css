@@ -1,15 +1,18 @@
 header {
     position: relative;
-    height: 100vh;
+    height: auto;
 }
 
 .header_container {
     font-family: var(--font-title);
     align-items: initial;
     position: relative;
+    width: 100%;
+    height: 700px;
 }
 
 .header__content {
+    width: 60%;
     padding: 4rem 5rem;
 }
 
@@ -24,27 +27,19 @@ header {
 }
 
 .image_container {
-    position: relative;
-    max-width: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+    background: url(/assets/img/inicio.png);
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
     
 }
 
 .web {
-    max-width: 100%;
-    
-}
+    display: none;
 
-
-
-.gif_web{
-    position: absolute;
-    top: 26%;
-    left: 12%;
-}
-
-.gif_car img {
-    width: 85%; /* Ajusta el ancho del GIF al 100% del contenedor */
-    height: auto; /* Mantiene la proporción original */
 }
 
 
@@ -67,6 +62,7 @@ header {
 @media screen and (max-width: 780px) {
     .header_container {
         flex-direction: column;
+        align-items: center;
     }
     .header__content {
         text-align: center;
@@ -74,6 +70,13 @@ header {
     .body__home {
         overflow: auto;
     }
+
+    .image_container {
+        position: relative;
+        padding-top: 300px;
+        bottom: 12%;
+    }
+
 }
 
 @media screen and (max-width: 400px) {

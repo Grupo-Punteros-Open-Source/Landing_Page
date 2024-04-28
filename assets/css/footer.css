@@ -1,0 +1,40 @@
+.footer {
+    background-color: #002e43; 
+    padding: 40px; 
+    height: 200px; 
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    max-width: 100%;
+    border-top-right-radius: 20% ; 
+}
+
+.contacto,
+.redes-sociales,
+.imagenes {
+    padding-left: 20px; /* Reducir el padding si es necesario */
+    color: white;
+    width: 25%; /* Ajustar el ancho según sea necesario */
+    max-width: 300px; /* Establecer un máximo ancho para evitar que se extienda demasiado */
+}
+
+
+.contacto h4,
+.redes-sociales h4,
+.imagenes h4 {
+    margin-bottom: 50px; 
+}
+
+.social-link {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white; 
+}
+
+.social-icon {
+    width: 20px; 
+    height: auto;
+    margin-right: 5px; 
+}
+

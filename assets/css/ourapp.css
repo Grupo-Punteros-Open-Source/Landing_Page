@@ -80,7 +80,13 @@
 
 
 @media screen and (max-width: 1110px) {
+
+    .ourapp-container {
+        height: auto;
+    }
+
     .ourapp__content {
+        height: auto;
         flex-direction: column;
         gap: 5rem;
     }
@@ -91,16 +97,9 @@
     .img-phone {
         width: auto;
         order: 2;
+        height: 400px;
     }
-
-    .img-phone img {
-        justify-content: left;
-        width: 100%;
-        background-size: cover;
-        
-        z-index: -1;
-    }
-
+   
     .ourapp-content__description h1 {
         font-size: 3rem;
     }
