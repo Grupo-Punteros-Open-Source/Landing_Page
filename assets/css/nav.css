@@ -116,6 +116,30 @@ li:hover::before {
     bottom: 0;
   }
 }
+#changeLanguageBtn {
+  background-color: #1e90ff; 
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+#changeLanguageBtn:hover {
+  background-color: #4169e1; 
+  transform: scale(1.05);
+}
+
+#changeLanguageBtn:active {
+  background-color: #1e90ff; 
+  transform: scale(0.95);
+}
 
 @media screen and (max-width: 600px) {
   .nav_container {
