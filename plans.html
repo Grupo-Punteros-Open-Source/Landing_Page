@@ -20,23 +20,26 @@
 <body class="planssection">
 
     <nav>
+        <div class="gray-gradient" id="red-aboutus"></div>
+    
         <div class="nav_container flex">
             <div class="logo">
                 <img src="./assets/img/logoAutoproTracker.png" alt="Logo">
             </div>
             <div class="nav__content">
                 <ul class="flex">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about_us.html">About Us</a></li>
-                    <li><a href="./community.html">Community</a></li>
-                    <li><a href="./plans.html">Plans</a></li>
-                    <li><a href="./contact_us.html">Contact Us</a></li>
+                    <button id="changeLanguageBtn">Change Language</button>
+                    <li><a href="./index.html" id="nav-home">Home</a></li>
+                    <li><a href="./about_us.html" id="nav-aboutus">About Us</a></li>
+                    <li><a href="./community.html" id="nav-community">Community</a></li>
+                    <li><a href="./plans.html" id = "nav-plans"> Plans</a></li>
+                    <li><a href="./contact_us.html" id = "nav-contactUs">Contact Us</a></li>
                     <a href="./ourapp.html">
-                        <div class="box">Our app</div>
+                        <div class="box" id = "nav-ourApp">Our app</div>
                     </a>
                 </ul>
             </div>
-
+    
             <div class="nav__content-toggle">
                 <i class="fa fa-bars"></i>
             </div>
@@ -46,52 +49,52 @@
     <div class="plans-container flex">
         <div class="custom-cards">
             <div class="custom-card">
-                <div class="custom-card-title">Plan Básico</div>
-                <div class="custom-price">$9.99/mes</div>
+                <div class="custom-card-title" id = "planB">Plan Básico</div>
+                <div class="custom-price" id="price1">$9.99/mes</div>
                 <ul class="custom-features">
-                    <li>- Customer Management</li>
-                    <li>- Customer Vehicle Management</li>
-                    <li>- Chat with clients</li>
+                    <li id = "cM1">- Customer Management</li>
+                    <li id = "cV1">- Customer Vehicle Management</li>
+                    <li id="chat1">- Chat with clients</li>
                 </ul>
-                <a href="#" class="custom-cta-button">Join now</a>
+                <a href="#" class="custom-cta-button" id="join">Join now</a>
             </div>
     
             <div class="custom-card">
-                <div class="custom-card-title">Plan Estándar</div>
-                <div class="custom-price">$15.99/mes</div>
+                <div class="custom-card-title" id = "planE">Plan Estándar</div>
+                <div class="custom-price" id="price2">$15.99/mes</div>
                 <ul class="custom-features">
-                    <li>- Customer Management</li>
-                    <li>- Customer Vehicle Management</li>
-                    <li>- Chat with clients</li>
-                    <li>- Invoice Management</li>
+                    <li id="cM2">- Customer Management</li>
+                    <li id="cV2">- Customer Vehicle Management</li>
+                    <li id="chat2">- Chat with clients</li>
+                    <li id="im1">- Invoice Management</li>
                 </ul>
-                <a href="#" class="custom-cta-button">Join now</a>
+                <a href="#" class="custom-cta-button" id="joinN2">Join now</a>
             </div>
     
             <div class="custom-card">
-                <div class="custom-card-title">Plan Premium</div>
-                <div class="custom-price">$22.99/mes</div>
+                <div class="custom-card-title" id="planP">Plan Premium</div>
+                <div class="custom-price" id="price3">$22.99/mes</div>
                 <ul class="custom-features">
-                    <li>- Customer Management</li>
-                    <li>- Customer Vehicle Management</li>
-                    <li>- Chat with clients</li>
-                    <li>- Invoice Management</li>
-                    <li>- Stock Inventory of workshop things</li>
+                    <li id="cM3">- Customer Management</li>
+                    <li id="cV3">- Customer Vehicle Management</li>
+                    <li id="chat3">- Chat with clients</li>
+                    <li id="im2">- Invoice Management</li>
+                    <li id ="stock">- Stock Inventory of workshop things</li>
                 </ul>
-                <a href="#" class="custom-cta-button">Join now</a>
+                <a href="#" class="custom-cta-button" id="joinn">Join now</a>
             </div>
         </div>
     </div>
 
     <footer class="footer">
         <div class="contacto">
-          <h4>Contact Us</h4>
-          <p>Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
-          <p>+ 51 634 578</p>
-          <p>@AutoPro_Tracker</p>
+          <h4 id = footer-contact>Contact Us</h4>
+          <p id = "footer-schedule"> Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
+          <p >+ 51 634 578</p>
+          <p >@AutoPro_Tracker</p>
         </div>
         <div class="redes-sociales">
-          <h4>SOCIAL</h4>
+          <h4 id ="footer-social">SOCIAL</h4>
           <p>
             <a href="#" class="social-link"><img src="./assets/img/facebook-logo.png" alt="Facebook" class="social-icon"> Facebook</a>
             <a href="#" class="social-link"><img src="./assets/img/twitter-logo.png" alt="Twitter" class="social-icon"> Twitter</a>
@@ -100,9 +103,119 @@
           </p>
         </div>
         
-      </footer>
+    </footer>
     
 
     <script src="./js/menu-toggle.js"></script>
+    <script>
+        document.getElementById('changeLanguageBtn').addEventListener('click', function() {
+          
+            const texts = {
+                en: {
+                    home: 'Home',
+                    aboutUs: 'About Us',
+                    community: 'Community',
+                    plans: 'Plans',
+                    contactUs: 'Contact Us',
+                    ourApp: 'Our App',
+                    schedule: 'Monday to Friday from 9:00 a.m. to 5:00 p.m.',
+                    social: 'SOCIAL',
+                    planB: 'Basic Plan',
+                    price1: '$9.99/month',
+                    cM1: '- Customer Management',
+                    cV1: '- Customer Vehicle Management',
+                    chat1: '- Chat with clients',
+                    join: 'Join now',
+                    planE: 'Standard Plan',
+                    price2: '$15.99/month',
+                    cM2: '- Customer Management',
+                    cV2: '- Customer Vehicle Management',
+                    chat2: '- Chat with clients',
+                    im1: '- Invoice Management',
+                    planP: 'Premium Plan',
+                    price3: '$22.99/month',
+                    cM3: '- Customer Management',
+                    cV3: '- Customer Vehicle Management',
+                    chat3: '- Chat with clients',
+                    im2: '- Invoice Management',
+                    stock: '- Stock Inventory of workshop things',
+                    joinn: 'Join now'
+                 
+                   
+                },
+                es: {
+                    home: 'Inicio',
+                    aboutUs: 'Conócenos',
+                    community: 'Comunidad',
+                    plans: 'Planes',
+                    contactUs: 'Contáctanos',
+                    ourApp: 'Nuestra App',
+                    schedule: 'Lunes a Viernes de 9:00 a.m. a 5:00 p.m.',
+                    social: 'REDES SOCIALES',
+                    planB: 'Plan Básico',
+                    price1: '$9.99/mes',
+                    cM1: '- Gestión de Clientes',
+                    cV1: '- Gestión de Vehículos de Clientes',
+                    chat1: '- Chat con clientes',
+                    join: 'Unirse ahora',
+                    planE: 'Plan Estándar',
+                    price2: '$15.99/mes',
+                    cM2: '- Gestión de Clientes',
+                    cV2: '- Gestión de Vehículos de Clientes',
+                    chat2: '- Chat con clientes',
+                    im1: '- Gestión de Facturas',
+                    planP: 'Plan Premium',
+                    price3: '$22.99/mes',
+                    cM3: '- Gestión de Clientes',
+                    cV3: '- Gestión de Vehículos de Clientes',
+                    chat3: '- Chat con clientes',
+                    im2: '- Gestión de Facturas',
+                    stock: '- Inventario de Stock de cosas de taller',
+                    joinn: 'Unirse ahora'
+                
+                    
+                }
+            };
+    
+
+            const currentLang = document.getElementById('nav-home').textContent === 'Home' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+    
+            document.getElementById('nav-home').textContent = texts[newLang].home;
+            document.getElementById('nav-aboutus').textContent = texts[newLang].aboutUs;
+            document.getElementById('nav-community').textContent = texts[newLang].community;
+            document.getElementById('nav-plans').textContent = texts[newLang].plans;
+            document.getElementById('nav-contactUs').textContent = texts[newLang].contactUs;
+            document.getElementById('nav-ourApp').textContent = texts[newLang].ourApp;
+            document.getElementById('footer-contact').textContent = texts[newLang].contactUs;
+            document.getElementById('footer-schedule').textContent = texts[newLang].schedule;
+            document.getElementById('footer-social').textContent = texts[newLang].social;
+            document.getElementById('planB').textContent = texts[newLang].planB;
+            document.getElementById('price1').textContent = texts[newLang].price1;
+            document.getElementById('cM1').textContent = texts[newLang].cM1;
+            document.getElementById('cV1').textContent = texts[newLang].cV1;
+            document.getElementById('chat1').textContent = texts[newLang].chat1;
+            document.getElementById('join').textContent = texts[newLang].join;
+            document.getElementById('planE').textContent = texts[newLang].planE;
+            document.getElementById('price2').textContent = texts[newLang].price2;
+            document.getElementById('cM2').textContent = texts[newLang].cM2;
+            document.getElementById('cV2').textContent = texts[newLang].cV2;
+            document.getElementById('chat2').textContent = texts[newLang].chat2;
+            document.getElementById('im1').textContent = texts[newLang].im1;
+            document.getElementById('planP').textContent = texts[newLang].planP;
+            document.getElementById('price3').textContent = texts[newLang].price3;
+            document.getElementById('cM3').textContent = texts[newLang].cM3;
+            document.getElementById('cV3').textContent = texts[newLang].cV3;
+            document.getElementById('chat3').textContent = texts[newLang].chat3;
+            document.getElementById('im2').textContent = texts[newLang].im2;
+            document.getElementById('stock').textContent = texts[newLang].stock;
+            document.getElementById('joinn').textContent = texts[newLang].joinn;
+            document.getElementById('joinN2').textContent = texts[newLang].joinn;
+
+
+
+        });
+    </script>
+    
 </body>
 </html>
