@@ -19,23 +19,26 @@
 <body class="body__home">
 
     <nav>
+        <div class="gray-gradient" id="red-aboutus"></div>
+    
         <div class="nav_container flex">
             <div class="logo">
                 <img src="./assets/img/logoAutoproTracker.png" alt="Logo">
             </div>
             <div class="nav__content">
                 <ul class="flex">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about_us.html">About Us</a></li>
-                    <li><a href="./community.html">Community</a></li>
-                    <li><a href="./plans.html">Plans</a></li>
-                    <li><a href="./contact_us.html">Contact Us</a></li>
+                    <button id="changeLanguageBtn">Change Language</button>
+                    <li><a href="./index.html" id="nav-home">Home</a></li>
+                    <li><a href="./about_us.html" id="nav-aboutus">About Us</a></li>
+                    <li><a href="./community.html" id="nav-community">Community</a></li>
+                    <li><a href="./plans.html" id = "nav-plans"> Plans</a></li>
+                    <li><a href="./contact_us.html" id = "nav-contactUs">Contact Us</a></li>
                     <a href="./ourapp.html">
-                        <div class="box">Our app</div>
+                        <div class="box" id = "nav-ourApp">Our app</div>
                     </a>
                 </ul>
             </div>
-
+    
             <div class="nav__content-toggle">
                 <i class="fa fa-bars"></i>
             </div>
@@ -46,8 +49,8 @@
         <div class="header_container flex">
 
             <div class="header__content">
-                <h1>Connecting efficiency, enhancing experiences</h1>
-                <p>"Transforming the way automotive companies manage and serve their customers, one vehicle at a time</p>
+                <h1 id="autotext">Connecting efficiency, enhancing experiences</h1>
+                <p id = "autodesc">"Transforming the way automotive companies manage and serve their customers, one vehicle at a time</p>
                 <dialog id="video">
                     <div class="flex">
                         <i class="fa-solid fa-xmark" id="close-window" style="color: #000000;"></i>
@@ -73,13 +76,13 @@
 
     <footer class="footer">
         <div class="contacto">
-          <h4>Contact Us</h4>
-          <p>Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
-          <p>+ 51 634 578</p>
-          <p>@AutoPro_Tracker</p>
+          <h4 id = footer-contact>Contact Us</h4>
+          <p id = "footer-schedule"> Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
+          <p >+ 51 634 578</p>
+          <p >@AutoPro_Tracker</p>
         </div>
         <div class="redes-sociales">
-          <h4>SOCIAL</h4>
+          <h4 id ="footer-social">SOCIAL</h4>
           <p>
             <a href="#" class="social-link"><img src="./assets/img/facebook-logo.png" alt="Facebook" class="social-icon"> Facebook</a>
             <a href="#" class="social-link"><img src="./assets/img/twitter-logo.png" alt="Twitter" class="social-icon"> Twitter</a>
@@ -88,10 +91,60 @@
           </p>
         </div>
         
-      </footer>
+    </footer>
+    
 
     <script src="./js/menu-toggle.js"></script>
     <script src="./js/modal-window.js"></script>
+    <script>
+        document.getElementById('changeLanguageBtn').addEventListener('click', function() {
+          
+            const texts = {
+                en: {
+                    home: 'Home',
+                    aboutUs: 'About Us',
+                    community: 'Community',
+                    plans: 'Plans',
+                    contactUs: 'Contact Us',
+                    ourApp: 'Our App',
+                    schedule: 'Monday to Friday from 9:00 a.m. to 5:00 p.m.',
+                    social: 'SOCIAL',
+                    autotext: 'Connecting efficiency, enhancing experiences',
+                    autodesc: '"Transforming the way automotive companies manage and serve their customers, one vehicle at a time'
+                   
+                },
+                es: {
+                    home: 'Inicio',
+                    aboutUs: 'Conócenos',
+                    community: 'Comunidad',
+                    plans: 'Planes',
+                    contactUs: 'Contáctanos',
+                    ourApp: 'Nuestra App',
+                    schedule: 'Lunes a Viernes de 9:00 a.m. a 5:00 p.m.',
+                    social: 'REDES SOCIALES',
+                    autotext: 'Conectando eficiencia, mejorando experiencias',
+                    autodesc: '"Transformando la forma en que las empresas automotrices gestionan y atienden a sus clientes, un vehículo a la vez'
+                }
+            };
+    
+
+            const currentLang = document.getElementById('nav-home').textContent === 'Home' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+    
+            document.getElementById('nav-home').textContent = texts[newLang].home;
+            document.getElementById('nav-aboutus').textContent = texts[newLang].aboutUs;
+            document.getElementById('nav-community').textContent = texts[newLang].community;
+            document.getElementById('nav-plans').textContent = texts[newLang].plans;
+            document.getElementById('nav-contactUs').textContent = texts[newLang].contactUs;
+            document.getElementById('nav-ourApp').textContent = texts[newLang].ourApp;
+            document.getElementById('footer-contact').textContent = texts[newLang].contactUs;
+            document.getElementById('footer-schedule').textContent = texts[newLang].schedule;
+            document.getElementById('footer-social').textContent = texts[newLang].social;
+            document.getElementById('autotext').textContent = texts[newLang].autotext;
+            document.getElementById('autodesc').textContent = texts[newLang].autodesc;
+
+        });
+    </script>
     
 </body>
 </html>
