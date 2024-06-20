@@ -20,23 +20,26 @@
 <body class="ourappsection">
 
     <nav>
+        <div class="gray-gradient" id="red-aboutus"></div>
+    
         <div class="nav_container flex">
             <div class="logo">
                 <img src="./assets/img/logoAutoproTracker.png" alt="Logo">
             </div>
             <div class="nav__content">
                 <ul class="flex">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about_us.html">About Us</a></li>
-                    <li><a href="./community.html">Community</a></li>
-                    <li><a href="./plans.html">Plans</a></li>
-                    <li><a href="./contact_us.html">Contact Us</a></li>
+                    <button id="changeLanguageBtn">Change Language</button>
+                    <li><a href="./index.html" id="nav-home">Home</a></li>
+                    <li><a href="./about_us.html" id="nav-aboutus">About Us</a></li>
+                    <li><a href="./community.html" id="nav-community">Community</a></li>
+                    <li><a href="./plans.html" id = "nav-plans"> Plans</a></li>
+                    <li><a href="./contact_us.html" id = "nav-contactUs">Contact Us</a></li>
                     <a href="./ourapp.html">
-                        <div class="box">Our app</div>
+                        <div class="box" id = "nav-ourApp">Our app</div>
                     </a>
                 </ul>
             </div>
-
+    
             <div class="nav__content-toggle">
                 <i class="fa fa-bars"></i>
             </div>
@@ -51,25 +54,24 @@
                 <img src="./assets/img/degradadogris.webp" alt="Pagina Web Autopro Tracker">
             </div>
             <div class="ourapp-content__description">
-                <h1>Boost your automotive success</h1>
-                <p>Visit our website today to discover how we can help you enhance customer information management, 
+                <h1 id = "T1">Boost your automotive success</h1>
+                <p id = "desc1">Visit our website today to discover how we can help you enhance customer information management, 
                     establish effective communication channels, and ensure efficiency in every process</p>
                 <div class="download flex">
-                    <button>Click Aqui</button>
+                    <button id = "clickaqi">Click Aqui</button>
                 </div>
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <div class="contacto">
-          <h4>Contact Us</h4>
-          <p>Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
-          <p>+ 51 634 578</p>
-          <p>@AutoPro_Tracker</p>
+          <h4 id = footer-contact>Contact Us</h4>
+          <p id = "footer-schedule"> Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
+          <p >+ 51 634 578</p>
+          <p >@AutoPro_Tracker</p>
         </div>
         <div class="redes-sociales">
-          <h4>SOCIAL</h4>
+          <h4 id ="footer-social">SOCIAL</h4>
           <p>
             <a href="#" class="social-link"><img src="./assets/img/facebook-logo.png" alt="Facebook" class="social-icon"> Facebook</a>
             <a href="#" class="social-link"><img src="./assets/img/twitter-logo.png" alt="Twitter" class="social-icon"> Twitter</a>
@@ -78,9 +80,63 @@
           </p>
         </div>
         
-      </footer>
-
+    </footer>
 
     <script src="./js/menu-toggle.js"></script>
+    <script>
+        document.getElementById('changeLanguageBtn').addEventListener('click', function() {
+          
+            const texts = {
+                en: {
+                    home: 'Home',
+                    aboutUs: 'About Us',
+                    community: 'Community',
+                    plans: 'Plans',
+                    contactUs: 'Contact Us',
+                    ourApp: 'Our App',
+                    schedule: 'Monday to Friday from 9:00 a.m. to 5:00 p.m.',
+                    social: 'SOCIAL',
+                    T1: 'Boost your automotive success',
+                    desc1: 'Visit our website today to discover how we can help you enhance customer information management, establish effective communication channels, and ensure efficiency in every process',
+                    clickaqi: 'Click Here'
+                
+                   
+                },
+                es: {
+                    home: 'Inicio',
+                    aboutUs: 'Conócenos',
+                    community: 'Comunidad',
+                    plans: 'Planes',
+                    contactUs: 'Contáctanos',
+                    ourApp: 'Nuestra App',
+                    schedule: 'Lunes a Viernes de 9:00 a.m. a 5:00 p.m.',
+                    social: 'REDES SOCIALES',
+                    T1: 'Impulsa tu éxito automotriz',
+                    desc1: 'Visita nuestra página web hoy para descubrir cómo podemos ayudarte a mejorar la gestión de la información del cliente, establecer canales de comunicación efectivos y garantizar la eficiencia en cada proceso',
+                    clickaqi: 'Click Aqui'
+                    
+                }
+            };
+    
+
+            const currentLang = document.getElementById('nav-home').textContent === 'Home' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+    
+            document.getElementById('nav-home').textContent = texts[newLang].home;
+            document.getElementById('nav-aboutus').textContent = texts[newLang].aboutUs;
+            document.getElementById('nav-community').textContent = texts[newLang].community;
+            document.getElementById('nav-plans').textContent = texts[newLang].plans;
+            document.getElementById('nav-contactUs').textContent = texts[newLang].contactUs;
+            document.getElementById('nav-ourApp').textContent = texts[newLang].ourApp;
+            document.getElementById('footer-contact').textContent = texts[newLang].contactUs;
+            document.getElementById('footer-schedule').textContent = texts[newLang].schedule;
+            document.getElementById('footer-social').textContent = texts[newLang].social;
+            document.getElementById('T1').textContent = texts[newLang].T1;
+            document.getElementById('desc1').textContent = texts[newLang].desc1;
+            document.getElementById('clickaqi').textContent = texts[newLang].clickaqi;
+
+
+        });
+    </script>
 </body>
 </html>
