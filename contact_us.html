@@ -47,7 +47,7 @@
     <div class="contact_us-container flex">
         <div class="contact-us-content flex">
             <div class="contact-us">
-                <h1>Contact us</h1>
+                <h1 id ="contac">Contact us</h1>
                 <form action="">
                     <div class="input__container">
                         <input type="text" name="name" placeholder=" " id="name" required autocomplete="off">
@@ -65,7 +65,7 @@
                     </div>
 
                     <button>
-                        <div class="box">Submit</div>
+                        <div class="box" id="submit">Submit</div>
                     </button>
                 </form>
             </div>
@@ -74,8 +74,8 @@
                 <div class="card">
                     <div class="blue-gradient"></div>
                     <div class="gray-gradient"></div>
-                    <h2>Contact Business Solution</h2>
-                    <p>Are you already a customer or are you experiencing issues with our service? <a href="#">Contact our support team</a></p>
+                    <h2 id="tit1">Contact Business Solution</h2>
+                    <p id="tit2">Are you already a customer or are you experiencing issues with our service? <a href="#" id ="clink">Contact our support team</a></p>
 
                     <div class="card-links">
                         <div class="card-links__content">
@@ -132,10 +132,18 @@
                     plans: 'Plans',
                     contactUs: 'Contact Us',
                     ourApp: 'Our App',
-                    par1: 'At AutoPro Tracker, we strive to enhance automotive management through efficient solutions and effective communication channels, aiming to streamline vehicle repair and maintenance procedures.',
-                    par2: 'We aim to be leaders in automotive management transformation, providing solutions that optimize business processes and enhance the customer experience',
                     schedule: 'Monday to Friday from 9:00 a.m. to 5:00 p.m.',
-                    social: 'SOCIAL'
+                    social: 'SOCIAL',
+                    contac: 'Contact us',
+                    tit1: 'Contact Business Solution',
+                    tit2: 'Are you already a customer or are you experiencing issues with our service? Contact our support team',
+                    clink: 'Contact our support team',
+                    name: 'Name',
+                    email: 'Email',
+                    mssg: 'Message',
+                    submit: 'Submit'
+                
+
                     
                 },
                 es: {
@@ -145,10 +153,16 @@
                     plans: 'Planes',
                     contactUs: 'Contáctanos',
                     ourApp: 'Nuestra App',
-                    par1: 'En AutoPro Tracker, nos esforzamos por mejorar la gestión automotriz a través de soluciones eficientes y canales de comunicación efectivos, con el objetivo de optimizar los procedimientos de reparación y mantenimiento de vehículos.',
-                    par2: 'Buscamos ser líderes en la transformación de la gestión automotriz, brindando soluciones que optimicen los procesos empresariales y mejoren la experiencia del cliente.',
                     schedule: 'Lunes a Viernes de 9:00 a.m. a 5:00 p.m.',
-                    social: 'REDES SOCIALES'
+                    social: 'REDES SOCIALES',
+                    contac: 'Contáctanos',
+                    tit1: 'Contacta Soluciones Empresariales',
+                    tit2: '¿Ya eres cliente o estás experimentando problemas con nuestro servicio? Contacta a nuestro equipo de soporte',
+                    clink: 'Contacta a nuestro equipo de soporte',
+                    name: 'Nombre',
+                    email: 'Correo Electrónico',
+                    mssg: 'Mensaje',
+                    submit: 'Enviar'
 
                 }
             };
@@ -163,12 +177,17 @@
             document.getElementById('nav-plans').textContent = texts[newLang].plans;
             document.getElementById('nav-contactUs').textContent = texts[newLang].contactUs;
             document.getElementById('nav-ourApp').textContent = texts[newLang].ourApp;
-            document.getElementById('title-aboutUs').textContent = texts[newLang].aboutUs;
-            document.getElementById('p1').textContent = texts[newLang].par1;
-            document.getElementById('p2').textContent = texts[newLang].par2;
             document.getElementById('footer-contact').textContent = texts[newLang].contactUs;
             document.getElementById('footer-schedule').textContent = texts[newLang].schedule;
             document.getElementById('footer-social').textContent = texts[newLang].social;
+            document.getElementById('contac').textContent = texts[newLang].contac;
+            document.getElementById('tit1').textContent = texts[newLang].tit1;
+            document.getElementById('tit2').textContent = texts[newLang].tit2;
+            document.getElementById('clink').textContent = texts[newLang].clink;
+            document.getElementById('name').placeholder = texts[newLang].name;
+            document.getElementById('email').placeholder = texts[newLang].email;
+            document.getElementById('mssg').placeholder = texts[newLang].mssg;
+            document.getElementById('submit').textContent = texts[newLang].submit;
 
 
         });
