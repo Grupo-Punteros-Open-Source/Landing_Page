@@ -20,24 +20,25 @@
     
     <nav>
         <div class="gray-gradient" id="red-aboutus"></div>
-
+    
         <div class="nav_container flex">
             <div class="logo">
                 <img src="./assets/img/logoAutoproTracker.png" alt="Logo">
             </div>
             <div class="nav__content">
                 <ul class="flex">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about_us.html">About Us</a></li>
-                    <li><a href="./community.html">Community</a></li>
-                    <li><a href="./plans.html">Plans</a></li>
-                    <li><a href="./contact_us.html">Contact Us</a></li>
+                    <button id="changeLanguageBtn">Lang</button>
+                    <li><a href="./index.html" id="nav-home">Home</a></li>
+                    <li><a href="./about_us.html" id="nav-aboutus">About Us</a></li>
+                    <li><a href="./community.html" id="nav-community">Community</a></li>
+                    <li><a href="./plans.html" id = "nav-plans"> Plans</a></li>
+                    <li><a href="./contact_us.html" id = "nav-contactUs">Contact Us</a></li>
                     <a href="./ourapp.html">
-                        <div class="box">Our app</div>
+                        <div class="box" id = "nav-ourApp">Our app</div>
                     </a>
                 </ul>
             </div>
-
+    
             <div class="nav__content-toggle">
                 <i class="fa fa-bars"></i>
             </div>
@@ -48,27 +49,40 @@
         <div class="blue-gradient" id="blue-aboutus"></div>
         <div class="about__container flex">
             <div class="about__content">
-                <h1>About Us</h1>
-                <p>At AutoPro Tracker, we strive to enhance automotive management through efficient solutions and effective 
+                <h1 id="title-aboutUs">About Us</h1>
+                <p id ="p1">At AutoPro Tracker, we strive to enhance automotive management through efficient solutions and effective 
                     communication channels, aiming to streamline vehicle repair and maintenance procedures.
                 </p>
-                <p>We aim to be leaders in automotive management transformation, providing solutions that optimize business 
+                <p id = "p2">We aim to be leaders in automotive management transformation, providing solutions that optimize business 
                     processes and enhance the customer experience
                 </p>
             </div>
+            <section class="about__team">
+                <h2>About the Team video</h2>
+                <br>
+                <iframe 
+                    src="https://www.youtube.com/embed/Us9JmF4lc7s"
+                    width="560" 
+                    height="315" 
+                    frameborder="0" 
+                    allowfullscreen>
+                </iframe>
+            </section>
         </div>
         <div class="gray-gradient" id="gray-aboutus"></div>
+       
+        <br>
     </main>
 
     <footer class="footer">
         <div class="contacto">
-          <h4>Contact Us</h4>
-          <p>Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
-          <p>+ 51 634 578</p>
-          <p>@AutoPro_Tracker</p>
+          <h4 id = footer-contact>Contact Us</h4>
+          <p id = "footer-schedule"> Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
+          <p >+ 51 634 578</p>
+          <p >@AutoPro_Tracker</p>
         </div>
         <div class="redes-sociales">
-          <h4>SOCIAL</h4>
+          <h4 id ="footer-social">SOCIAL</h4>
           <p>
             <a href="#" class="social-link"><img src="./assets/img/facebook-logo.png" alt="Facebook" class="social-icon"> Facebook</a>
             <a href="#" class="social-link"><img src="./assets/img/twitter-logo.png" alt="Twitter" class="social-icon"> Twitter</a>
@@ -80,6 +94,58 @@
     </footer>
 
     <script src="./js/menu-toggle.js"></script>
+    <script>
+        document.getElementById('changeLanguageBtn').addEventListener('click', function() {
+          
+            const texts = {
+                en: {
+                    home: 'Home',
+                    aboutUs: 'About Us',
+                    community: 'Community',
+                    plans: 'Plans',
+                    contactUs: 'Contact Us',
+                    ourApp: 'Our App',
+                    par1: 'At AutoPro Tracker, we strive to enhance automotive management through efficient solutions and effective communication channels, aiming to streamline vehicle repair and maintenance procedures.',
+                    par2: 'We aim to be leaders in automotive management transformation, providing solutions that optimize business processes and enhance the customer experience',
+                    schedule: 'Monday to Friday from 9:00 a.m. to 5:00 p.m.',
+                    social: 'SOCIAL'
+                    
+                },
+                es: {
+                    home: 'Inicio',
+                    aboutUs: 'Conócenos',
+                    community: 'Comunidad',
+                    plans: 'Planes',
+                    contactUs: 'Contáctanos',
+                    ourApp: 'Nuestra App',
+                    par1: 'En AutoPro Tracker, nos esforzamos por mejorar la gestión automotriz a través de soluciones eficientes y canales de comunicación efectivos, con el objetivo de optimizar los procedimientos de reparación y mantenimiento de vehículos.',
+                    par2: 'Buscamos ser líderes en la transformación de la gestión automotriz, brindando soluciones que optimicen los procesos empresariales y mejoren la experiencia del cliente.',
+                    schedule: 'Lunes a Viernes de 9:00 a.m. a 5:00 p.m.',
+                    social: 'REDES SOCIALES'
+
+                }
+            };
+    
+
+            const currentLang = document.getElementById('nav-home').textContent === 'Home' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+    
+            document.getElementById('nav-home').textContent = texts[newLang].home;
+            document.getElementById('nav-aboutus').textContent = texts[newLang].aboutUs;
+            document.getElementById('nav-community').textContent = texts[newLang].community;
+            document.getElementById('nav-plans').textContent = texts[newLang].plans;
+            document.getElementById('nav-contactUs').textContent = texts[newLang].contactUs;
+            document.getElementById('nav-ourApp').textContent = texts[newLang].ourApp;
+            document.getElementById('title-aboutUs').textContent = texts[newLang].aboutUs;
+            document.getElementById('p1').textContent = texts[newLang].par1;
+            document.getElementById('p2').textContent = texts[newLang].par2;
+            document.getElementById('footer-contact').textContent = texts[newLang].contactUs;
+            document.getElementById('footer-schedule').textContent = texts[newLang].schedule;
+            document.getElementById('footer-social').textContent = texts[newLang].social;
+
+
+        });
+    </script>
 
 
 </body>

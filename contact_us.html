@@ -18,7 +18,6 @@
         <title>AutoPro Tracker</title>
     </head>
 <body class="contactsection">
-
     <nav>
         <div class="nav_container flex">
             <div class="logo">
@@ -26,13 +25,14 @@
             </div>
             <div class="nav__content">
                 <ul class="flex">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about_us.html">About Us</a></li>
-                    <li><a href="./community.html">Community</a></li>
-                    <li><a href="./plans.html">Plans</a></li>
-                    <li><a href="./contact_us.html">Contact Us</a></li>
+                    <button id="changeLanguageBtn">Lang</button>
+                    <li><a href="./index.html" id="nav-home">Home</a></li>
+                    <li><a href="./about_us.html" id="nav-aboutus">About Us</a></li>
+                    <li><a href="./community.html" id="nav-community">Community</a></li>
+                    <li><a href="./plans.html" id = "nav-plans"> Plans</a></li>
+                    <li><a href="./contact_us.html" id = "nav-contactUs">Contact Us</a></li>
                     <a href="./ourapp.html">
-                        <div class="box">Our app</div>
+                        <div class="box" id = "nav-ourApp">Our app</div>
                     </a>
                 </ul>
             </div>
@@ -46,7 +46,7 @@
     <div class="contact_us-container flex">
         <div class="contact-us-content flex">
             <div class="contact-us">
-                <h1>Contact us</h1>
+                <h1 id ="contac">Contact us</h1>
                 <form action="">
                     <div class="input__container">
                         <input type="text" name="name" placeholder=" " id="name" required autocomplete="off">
@@ -64,7 +64,7 @@
                     </div>
 
                     <button>
-                        <div class="box">Submit</div>
+                        <div class="box" id="submit">Submit</div>
                     </button>
                 </form>
             </div>
@@ -73,8 +73,8 @@
                 <div class="card">
                     <div class="blue-gradient"></div>
                     <div class="gray-gradient"></div>
-                    <h2>Contact Business Solution</h2>
-                    <p>Are you already a customer or are you experiencing issues with our service? <a href="#">Contact our support team</a></p>
+                    <h2 id="tit1">Contact Business Solution</h2>
+                    <p id="tit2">Are you already a customer or are you experiencing issues with our service? <a href="#" id ="clink">Contact our support team</a></p>
 
                     <div class="card-links">
                         <div class="card-links__content">
@@ -101,13 +101,13 @@
 
     <footer class="footer">
         <div class="contacto">
-          <h4>Contact Us</h4>
-          <p>Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
-          <p>+ 51 634 578</p>
-          <p>@AutoPro_Tracker</p>
+          <h4 id = footer-contact>Contact Us</h4>
+          <p id = "footer-schedule"> Monday to Friday from 9:00 a.m. to 5:00 p.m.</p>
+          <p >+ 51 634 578</p>
+          <p >@AutoPro_Tracker</p>
         </div>
         <div class="redes-sociales">
-          <h4>SOCIAL</h4>
+          <h4 id ="footer-social">SOCIAL</h4>
           <p>
             <a href="#" class="social-link"><img src="./assets/img/facebook-logo.png" alt="Facebook" class="social-icon"> Facebook</a>
             <a href="#" class="social-link"><img src="./assets/img/twitter-logo.png" alt="Twitter" class="social-icon"> Twitter</a>
@@ -116,8 +116,80 @@
           </p>
         </div>
         
-      </footer>
+    </footer>
 
     <script src="./js/menu-toggle.js"></script>
+
+    <script>
+        document.getElementById('changeLanguageBtn').addEventListener('click', function() {
+          
+            const texts = {
+                en: {
+                    home: 'Home',
+                    aboutUs: 'About Us',
+                    community: 'Community',
+                    plans: 'Plans',
+                    contactUs: 'Contact Us',
+                    ourApp: 'Our App',
+                    schedule: 'Monday to Friday from 9:00 a.m. to 5:00 p.m.',
+                    social: 'SOCIAL',
+                    contac: 'Contact us',
+                    tit1: 'Contact Business Solution',
+                    tit2: 'Are you already a customer or are you experiencing issues with our service? Contact our support team',
+                    clink: 'Contact our support team',
+                    name: 'Name',
+                    email: 'Email',
+                    mssg: 'Message',
+                    submit: 'Submit'
+                
+
+                    
+                },
+                es: {
+                    home: 'Inicio',
+                    aboutUs: 'Conócenos',
+                    community: 'Comunidad',
+                    plans: 'Planes',
+                    contactUs: 'Contáctanos',
+                    ourApp: 'Nuestra App',
+                    schedule: 'Lunes a Viernes de 9:00 a.m. a 5:00 p.m.',
+                    social: 'REDES SOCIALES',
+                    contac: 'Contáctanos',
+                    tit1: 'Contacta Soluciones Empresariales',
+                    tit2: '¿Ya eres cliente o estás experimentando problemas con nuestro servicio? Contacta a nuestro equipo de soporte',
+                    clink: 'Contacta a nuestro equipo de soporte',
+                    name: 'Nombre',
+                    email: 'Correo Electrónico',
+                    mssg: 'Mensaje',
+                    submit: 'Enviar'
+
+                }
+            };
+    
+
+            const currentLang = document.getElementById('nav-home').textContent === 'Home' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+    
+            document.getElementById('nav-home').textContent = texts[newLang].home;
+            document.getElementById('nav-aboutus').textContent = texts[newLang].aboutUs;
+            document.getElementById('nav-community').textContent = texts[newLang].community;
+            document.getElementById('nav-plans').textContent = texts[newLang].plans;
+            document.getElementById('nav-contactUs').textContent = texts[newLang].contactUs;
+            document.getElementById('nav-ourApp').textContent = texts[newLang].ourApp;
+            document.getElementById('footer-contact').textContent = texts[newLang].contactUs;
+            document.getElementById('footer-schedule').textContent = texts[newLang].schedule;
+            document.getElementById('footer-social').textContent = texts[newLang].social;
+            document.getElementById('contac').textContent = texts[newLang].contac;
+            document.getElementById('tit1').textContent = texts[newLang].tit1;
+            document.getElementById('tit2').textContent = texts[newLang].tit2;
+            document.getElementById('clink').textContent = texts[newLang].clink;
+            document.getElementById('name').placeholder = texts[newLang].name;
+            document.getElementById('email').placeholder = texts[newLang].email;
+            document.getElementById('mssg').placeholder = texts[newLang].mssg;
+            document.getElementById('submit').textContent = texts[newLang].submit;
+
+
+        });
+    </script>
 </body>
 </html>
